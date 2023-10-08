@@ -1,0 +1,6 @@
+#!/bin/bash
+current_date=$(date +"%d-%m-%Y-%H-%M")
+nbrconnection=$(grep -c "$USER" /var/log/auth.log)
+echo "$nbrconnection" > "/home/soso/job.08/backup/number_connection-$current_date.txt"
+tar cvf "/home/soso/job.08/backup/number_connection-$current_date.tar" "/home/soso/job.08/backup/number_connection-$current_date.txt"
+
